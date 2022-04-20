@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li, input, select, textarea,
+fieldset, form, label, legend, fieldset,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  /* outline: 0; */
+  font-style: normal;
+  font-size: 100%;
+/*   font-family: "Noto Sans CJk KR",sans-serif; */
+  font-family: "Noto Sans KR",sans-serif;
+  vertical-align: top;
+  list-style: none;
+  text-decoration: none;
+	border-collapse:collapse;
+  letter-spacing: -1px;
+  word-break: break-all
+}
+
+html,body{height: 100%;-webkit-print-color-adjust: exact !important;}
+* html {height: 1px}
+
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder { /* WebKit browsers */ color:transparent}
+input:focus:-moz-placeholder, textarea:focus:-moz-placeholder { /* Mozilla Firefox 4 to 18 */ color:transparent}
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder { /* Mozilla Firefox 19+ */ color:transparent}
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder { /* Internet Explorer 10+ */ color:transparent}
+
+/* 투명도 조절 */
+.customizing{float:right;position:relative;top:-25px;right:35px;width:129px;height: 5px;}
+
+/* WA : 60page */
+caption{overflow:hidden;height: 0;font-size: 0;}

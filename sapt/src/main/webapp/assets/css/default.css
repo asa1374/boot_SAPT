@@ -1,0 +1,105 @@
+@charset "UTF-8";
+/* 공통 */
+#wrap{min-width: 1090px;height: 100%}
+#gdx-bubble-host{display: none}
+
+/* panel - 국토환경성 평가등급분석 */
+.panel_rate_bottom{bottom: 18px;padding: 0 20px 0 19px}
+/* WA : 24page color 변경*/
+.panel_rate_bottom p{font-size: 13px;line-height: 16px;color: #60676E}
+.panel_rate_list{padding: 10px;position: absolute;right: 29%;top: -2%;}
+
+.rate_cate{}
+.rate_cate li{border: 1px solid #ddd;border-top: 0}
+.rate_cate li:first-of-type{border-top: 1px solid #ddd}
+
+/* 업로드 및 분석 부분 padding 수정 */
+.rate_cate li a{display: block;padding: 14px;background: #fff;font-size: 0;width:100%}
+.rate_cate li a .rate_cate_img{display: inline-block}
+.rate_cate li a .rate_cate_txt{display: inline-block;width: 172px;margin-left: 14px;padding: 6px 0 0}
+.rate_cate li a .rate_cate_txt dt{font-size: 14px;line-height: 24px;color: #333}
+.rate_cate li a .rate_cate_txt dd{margin-top: 8px;font-size: 13px;line-height: 17px;color: #666}
+.rate_cate.water{margin-top: 10px;}
+
+/*20190812 range css*/
+input[type=range] {
+    -webkit-appearance: none;
+}
+input[type=range]:focus {
+    outline: none;
+}
+/*webkit (Chrome)의 경우*/
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #2497E3;
+}
+input[type=range]::-webkit-slider-thumb {
+    border: 1px solid #2497E3;
+    height: 15px;
+    width: 10px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -5px; /*chrome의 경우 margin-top값을 부여해야합니다.*/
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #2497E3; /*네모버튼에 포커스를 줬을때 뒤에 라인(ㅡ)의 효과*/
+}
+/*Firefox의 경우*/
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: #2497E3;
+}
+input[type=range]::-moz-range-thumb {
+    border: 1px solid #2497E3;
+    height: 15px;
+    width: 10px;
+    background: #ffffff;
+    cursor: pointer;
+}
+/*IE의 경우*/
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    animate: 0.2s;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+    background: #2497E3;
+}
+input[type=range]::-ms-fill-upper {
+    background: #2497E3;
+}
+input[type=range]::-ms-thumb {
+    margin-top: 1px;
+    border: 1px solid #2497E3;
+    height: 15px;
+    width: 10px;
+    background: #ffffff;
+    cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+    background: #2497E3;/*네모버튼에 포커스를 줬을때 뒤에 라인(ㅡ)의 효과*/
+}
+input[type=range]:focus::-ms-fill-upper {
+    background: #2497E3; /*네모버튼에 포커스를 줬을때 뒤에 라인(ㅡ)의 효과*/
+}
+
+/*WA hidden*/
+.hidden_explanation{display:block; height: 0; width: 0; font-size: 0; line-height: 0; margin: 0; padding: 0; overflow:hidden;}
+/*WA hidden*/
+
+@media (max-width:1300px){
+	.panel_rate_bottom p{
+    	display:none;
+	}
+}
