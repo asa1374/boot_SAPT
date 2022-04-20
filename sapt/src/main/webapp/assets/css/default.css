@@ -9,7 +9,7 @@
 .panel_rate_bottom p{font-size: 13px;line-height: 16px;color: #60676E}
 .panel_rate_list{padding: 10px;position: absolute;right: 29%;top: -2%;}
 
-.rate_cate{}
+.rate_cate{} 
 .rate_cate li{border: 1px solid #ddd;border-top: 0}
 .rate_cate li:first-of-type{border-top: 1px solid #ddd}
 
