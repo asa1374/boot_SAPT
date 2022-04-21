@@ -76,7 +76,7 @@ function getAptTransPrice(admCd){
 	}
 	
 	$.ajax({ 
-		type: "POST", 
+		type: "POST",    
 		url : url, 
 		data: JSON.stringify(pdata), 
 		dataType: "json", 
