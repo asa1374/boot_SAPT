@@ -5,7 +5,7 @@
 //도로명 주소 apiKey
 var roadNameKey = "devU01TX0FVVEgyMDIyMDQxMTIxMzg0NzExMjQ1MDE=";
 //공공데이터 apiKey
-var dataKey = '4FmGtAa3OYWP8sSbzraBtP/V4YS+5sV5mB0pzmbUgFVv/MWcVQma5/s1+//q2FhSngKXSQeSa8Usr7EO6yz1CQ=='; 
+var dataKey = '4FmGtAa3OYWP8sSbzraBtP%2FV4YS%2B5sV5mB0pzmbUgFVv%2FMWcVQma5%2Fs1%2B%2F%2Fq2FhSngKXSQeSa8Usr7EO6yz1CQ%3D%3D'; 
 //'4FmGtAa3OYWP8sSbzraBtP%2FV4YS%2B5sV5mB0pzmbUgFVv%2FMWcVQma5%2Fs1%2B%2F%2Fq2FhSngKXSQeSa8Usr7EO6yz1CQ%3D%3D';
 
 $(function() {
@@ -35,6 +35,8 @@ function getRoadName(schWord){
     	console.log(addrNm);
     	getAptTransPrice(admCd);
     	
+	}).fail(function() {
+		 alert("시/군/구를 제외하고 입력해 주세요."); 
 	});
 }	
 
