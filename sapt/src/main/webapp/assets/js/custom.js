@@ -70,7 +70,6 @@ function getAptTransPrice(admCd){
 	console.log(dateString);
 	
 	var url = "/getRTMSDataSvcAptTrade"
-//	var url = "/ajaxTest"
 	var pdata = {
 		"serviceKey" : dataKey
 		,"LAWD_CD" : admCd.substr(0,5)
