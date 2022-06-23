@@ -83,7 +83,21 @@ function getAptTransPrice(admCd){
 		dataType: "json", 
 		contentType:"application/json;charset=UTF-8", 
 		success : function(data) { 
-			console.log(data); 
+			var dataList = data.response.body.items.item;
+			
+			var html = '';
+			
+			$.each(dataList, (index,item) => {
+				html += '<tr>';
+				html += '<td>'+ item.아파트 + '</td>';
+				html += '<td>'+ item.전용면적 + '</td>';
+				html += '<td>'+ item.층 + '</td>';
+				html += '<td>'+ item.거래금액 + '</td>';
+				html += '</tr>';
+				
+			});
+			
+			$('#tradeList').append(html);
 		}, 
 		error: function(jqXHR) { 
 			alert(jqXHR.responseText); 

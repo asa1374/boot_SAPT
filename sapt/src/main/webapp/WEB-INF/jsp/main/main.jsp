@@ -223,11 +223,23 @@
                             <div class="col-lg-4 col-md-6 col-12">
                                 <!-- Start Single List -->
                                 <div class="single-list wow fadeInUp" data-wow-delay=".2s">
-                                    <!-- <i class="lni lni-book"></i> -->
-                                    <h4>최근 매매 거리 아파트</h4>
-                                    <a href="localhost:8080/second?addrNM=경기도 파주시 우계로 45번길 43"></a>
-                                    <p>Buy and sell everything from used cars to mobile phones and computer or search
-                                        for property.</p>
+                                    <h4>거래 아파트 목록</h4>
+                                    <div class="table-responsive">
+							            <table class="table table-striped table-sm">
+							              <thead>
+							                <tr>
+							                  <th>아파트명</th>
+							                  <th>전용면적</th>
+							                  <th>층</th>
+							                  <th>거래금액(만원)</th>
+							                </tr>
+							              </thead>
+							              <tbody id="tradeList">
+							                
+							              </tbody>
+							            </table>
+                                    </div>
+                                    
                                 </div>
                                 <!-- Start Single List -->
                             </div>

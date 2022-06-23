@@ -4988,7 +4988,7 @@ blockquote .shape {
 
   .hero-area {
     padding-top: 135px;
-    padding-bottom: 185px;
+    /* padding-bottom: 185px; */
   }
 
   .hero-area .hero-text h2 {
