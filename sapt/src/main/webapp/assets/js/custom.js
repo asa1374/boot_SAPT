@@ -34,6 +34,7 @@ function getRoadName(schWord){
     	var admCd = resp.results.juso[0].admCd;
     	console.log(addrNm);
     	getAptTransPrice(admCd);
+    	getAptSaleInfo(addrNm);
     	
 	}).fail(function() {
 		 alert("시/군/구를 제외하고 입력해 주세요."); 
@@ -71,8 +72,7 @@ function getAptTransPrice(admCd){
 	
 	var url = "/getRTMSDataSvcAptTrade"
 	var pdata = {
-		"serviceKey" : dataKey
-		,"LAWD_CD" : admCd.substr(0,5)
+		"LAWD_CD" : admCd.substr(0,5)
 		,"DEAL_YMD" : dateString
 	}
 	
@@ -86,9 +86,12 @@ function getAptTransPrice(admCd){
 			var dataList = data.response.body.items.item;
 			
 			var html = '';
-			
+			dataList.sort((a,b) => {
+				return b["일"] - a["일"];
+			});
 			$.each(dataList, (index,item) => {
 				html += '<tr>';
+				html += '<td>'+ item.년 +'/'+ item.월 +'/' + item.일 + '</td>';
 				html += '<td>'+ item.아파트 + '</td>';
 				html += '<td>'+ item.전용면적 + '</td>';
 				html += '<td>'+ item.층 + '</td>';
@@ -105,3 +108,50 @@ function getAptTransPrice(admCd){
 	});
 	
 }	
+
+//아파트 분양 정보 조회
+function getAptSaleInfo(addrNm){
+
+	var url = "/getAptSaleInfo"
+	var pdata = {
+		"SUBSCRPT_AREA_CODE_NM" : addrNm.substr(0,2)
+		,"page" : 1
+		,"perPage" : 1000
+	}
+	
+	$.ajax({ 
+		type: "POST",   
+		url : url, 
+		data: JSON.stringify(pdata), 
+		dataType: "json", 
+		contentType:"application/json;charset=UTF-8", 
+		success : function(data) { 
+			var dataList = data.data;
+			
+			var html = '';
+			dataList.sort((a,b) => {
+				return new Date(b["RCEPT_BGNDE"]) - new Date(a["RCEPT_BGNDE"]);
+			});
+			$.each(dataList, (index,item) => {
+				html += '<tr>';
+				html += '<td><a href="'+item.HMPG_ADRES+'" target="_blank">'+ item.HOUSE_NM + '</a></td>'; //HMPG_ADRES 청약지 주소 
+				html += '<td>'+ item.HOUSE_DTL_SECD + '</td>'; //01 민영 , 03 국민
+				html += '<td>'+ item.RCEPT_BGNDE + '</td>'; //접수시작일
+				html += '<td>'+ item.RCEPT_ENDDE + '</td>'; //접수종료일
+				html += '</tr>';
+				
+			});
+			
+			$('#saleList').append(html);
+		}, 
+		error: function(jqXHR) { 
+			alert(jqXHR.responseText); 
+		} 
+	});
+	
+}	
+function parseDate(input) {
+  var parts = input.match(/(\d+)/g);
+  // new Date(year, month [, date [, hours[, minutes[, seconds[, ms]]]]])
+  return new Date(parts[0], parts[1]-1, parts[2], parts[3], parts[4], parts[5]); //     months are 0-based
+}

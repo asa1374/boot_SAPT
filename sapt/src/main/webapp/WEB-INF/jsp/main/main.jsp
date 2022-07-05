@@ -228,6 +228,7 @@
 							            <table class="table table-striped table-sm">
 							              <thead>
 							                <tr>
+							                  <th>거래일</th>
 							                  <th>아파트명</th>
 							                  <th>전용면적</th>
 							                  <th>층</th>
@@ -239,27 +240,27 @@
 							              </tbody>
 							            </table>
                                     </div>
-                                    
                                 </div>
                                 <!-- Start Single List -->
                             </div>
                             <div class="col-lg-4 col-md-6 col-12">
                                 <!-- Start Single List -->
                                 <div class="single-list wow fadeInUp" data-wow-delay=".4s">
-                                    <i class="lni lni-leaf"></i>
-                                    <h4>거래량이 많은 아파트</h4>
-                                    <p>Buy and sell everything from used cars to mobile phones and computer or search
-                                        for property.</p>
-                                </div>
-                                <!-- Start Single List -->
-                            </div>
-                            <div class="col-lg-4 col-md-6 col-12">
-                                <!-- Start Single List -->
-                                <div class="single-list wow fadeInUp" data-wow-delay=".6s">
-                                    <i class="lni lni-cog"></i>
-                                    <h4>매매 고가 아파트</h4>
-                                    <p>Buy and sell everything from used cars to mobile phones and computer or search
-                                        for property.</p>
+                                    <h4>cjddir home data</h4>
+                                    <div class="table-responsive">
+							            <table class="table table-striped table-sm">
+							              <thead>
+							                <tr>
+							                  <th>아파트명</th>
+							                  <th>주택상세구분</th>
+							                  <th>접수시작일</th>
+							                  <th>접수종료일</th>
+							                </tr>
+							              </thead>
+							              <tbody id="saleList">
+							              </tbody>
+							            </table>
+                                    </div>
                                 </div>
                                 <!-- Start Single List -->
                             </div>
@@ -307,18 +308,6 @@
                                 <div class="col-lg-6 col-md-6 col-12">
                                     <ul>
                                         <li><a href="javascript:void(0)">Chicago</a></li>
-                                        <li><a href="javascript:void(0)">New York City</a></li>
-                                        <li><a href="javascript:void(0)">San Francisco</a></li>
-                                        <li><a href="javascript:void(0)">Washington</a></li>
-                                        <li><a href="javascript:void(0)">Boston</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-lg-6 col-md-6 col-12">
-                                    <ul>
-                                        <li><a href="javascript:void(0)">Los Angeles</a></li>
-                                        <li><a href="javascript:void(0)">Seattle</a></li>
-                                        <li><a href="javascript:void(0)">Las Vegas</a></li>
-                                        <li><a href="javascript:void(0)">San Diego</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -330,11 +319,9 @@
                         <div class="single-footer f-link">
                             <h3>Quick Links</h3>
                             <ul>
-                                <li><a href="javascript:void(0)">About Us</a></li>
-                                <li><a href="javascript:void(0)">How It's Works</a></li>
-                                <li><a href="javascript:void(0)">Login</a></li>
-                                <li><a href="javascript:void(0)">Signup</a></li>
-                                <li><a href="javascript:void(0)">Help & Support</a></li>
+                                <li><a href="javascript:void(0)">주택관리공사</a></li>
+                                <li><a href="javascript:void(0)">청약홈</a></li>
+                                <li><a href="javascript:void(0)">LH청약센터</a></li>
                             </ul>
                         </div>
                         <!-- End Single Widget -->
@@ -344,8 +331,8 @@
                         <div class="single-footer f-contact">
                             <h3>Contact</h3>
                             <ul>
-                                <li>23 New Design Str, Lorem Upsum 10<br> Hudson Yards, USA</li>
-                                <li>Tel. +(123) 1800-567-8990 <br> Mail. support@classigrids.com</li>
+                                <li>경기도 <br>대한민국</li>
+                                <li>Tel. 010-1234-5678 <br> Mail. asa1374@gmail.com</li>
                             </ul>
                         </div>
                         <!-- End Single Widget -->

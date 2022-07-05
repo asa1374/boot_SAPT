@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pro.sapt.cmon.CommonConstants;
+
 @RestController
 public class DataApiController {
 	
@@ -20,14 +22,11 @@ public class DataApiController {
 	@RequestMapping(value = "/getRTMSDataSvcAptTrade")
 	public String getRTMSDataSvcAptTrade(@RequestBody Map<String,String> param) throws Exception {
 		
-		System.out.println(param.get("LAWD_CD"));
-		System.out.println(param.get("DEAL_YMD"));
-		
 		String result = "";
 		String jsonPrintString = null;
         try {
             String apiUrl = "http://openapi.molit.go.kr:8081/OpenAPI_ToolInstallPackage/service/rest/RTMSOBJSvc/getRTMSDataSvcAptTrade?" +
-                    "serviceKey=4FmGtAa3OYWP8sSbzraBtP%2FV4YS%2B5sV5mB0pzmbUgFVv%2FMWcVQma5%2Fs1%2B%2F%2Fq2FhSngKXSQeSa8Usr7EO6yz1CQ%3D%3D" +
+                    "serviceKey=" + CommonConstants.DATA_API_KEY +
                     "&LAWD_CD=" + param.get("LAWD_CD") +
                     "&DEAL_YMD=" + param.get("DEAL_YMD") ;
             URL url = new URL(apiUrl);
@@ -47,5 +46,32 @@ public class DataApiController {
         }
 
         return jsonPrintString;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value = "/getAptSaleInfo")
+	public String getAptSaleInfo(@RequestBody Map<String,String> param) throws Exception {
+		
+		String result = "";
+		try {
+			String apiUrl = "https://api.odcloud.kr/api/ApplyhomeInfoDetailSvc/v1/getAPTLttotPblancDetail?" +
+					"serviceKey=" + CommonConstants.DATA_API_KEY +
+					"&cond[SUBSCRPT_AREA_CODE_NM::EQ]=" + param.get("SUBSCRPT_AREA_CODE_NM") +
+					"&returnType=xml" +
+					"&page=" + param.get("page") +
+					"&perPage=" + param.get("perPage") ;
+			URL url = new URL(apiUrl);
+			BufferedReader bf;
+			bf = new BufferedReader(new InputStreamReader(url.openStream(), "UTF-8"));
+			result = bf.readLine();
+			
+			System.out.println(url);
+			System.out.println(result);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return result;
 	}
 }
